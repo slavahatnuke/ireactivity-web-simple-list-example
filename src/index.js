@@ -44,4 +44,6 @@ const AppView = () => <div><h1>List</h1> <TodoPlus/> <Todos/></div>;
 
 const App = AppView;
 
-ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={store}><App/></Provider>,
+    document.getElementById('root'));
