@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider, connect} from 'ireactivity';
 const uid = () => Math.random().toString(35).slice(2, 8).toUpperCase();
@@ -31,7 +31,7 @@ const Todos = connect(TodosView, {
     todos: (store) => store.todos
 });
 
-const TodoPlusView = ({onClick}) => <a href="#" onClick={onClick}>[ + ]</a>;
+const TodoPlusView = ({onClick}) => <button onClick={onClick}>Add</button>;
 
 const TodoPlus = connect(TodoPlusView, {
     onClick: (store) => () => {
@@ -40,7 +40,7 @@ const TodoPlus = connect(TodoPlusView, {
     }
 });
 
-const AppView = () => <div><h1>Todos</h1> <TodoPlus/> <Todos/></div>;
+const AppView = () => <div><h1>List</h1> <TodoPlus/> <Todos/></div>;
 
 const App = AppView;
 
