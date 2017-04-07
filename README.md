@@ -1,6 +1,7 @@
 # iReactivity: Simple list example
-![simple list example](./example.png)
-[src/index.js](./src/index.js)
+- ![simple list example](./example.png)
+
+- Example: [src/index.js](./src/index.js)
 
 It's just present idea:
 ```jsx harmony
