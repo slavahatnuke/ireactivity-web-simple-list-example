@@ -1,5 +1,6 @@
 # iReactivity: Simple list example
 It's just present idea [src/index.js](./src/index.js)
+of iReactivity [https://www.npmjs.com/package/ireactivity](https://www.npmjs.com/package/ireactivity)
 
 ---
 ![simple list example](./example.png)
