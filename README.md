@@ -1,12 +1,10 @@
 # iReactivity: Simple list example
+It's just present idea [src/index.js](./src/index.js)
 
-##### It looks like this:
+---
 ![simple list example](./example.png)
 
-##### Code
-[src/index.js](./src/index.js)
 
-It's just present idea:
 ```jsx harmony
 // src/index.js
 
