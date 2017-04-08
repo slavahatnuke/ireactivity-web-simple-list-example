@@ -60,3 +60,10 @@ ReactDOM.render(
     document.getElementById('root'));
 
 ```
+
+## How to start
+- `npm install`
+- `npm start`
+
+## iReactivity
+[https://www.npmjs.com/package/ireactivity](https://www.npmjs.com/package/ireactivity) - Simple React binding 
