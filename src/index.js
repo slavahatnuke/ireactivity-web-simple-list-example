@@ -18,7 +18,7 @@ const TodoForm = ({onSave}) => {
     };
 
     const save = () => {
-        onSave(todo);
+        onSave({...todo});
         update(todo, () => todo.title = '');
     };
 
