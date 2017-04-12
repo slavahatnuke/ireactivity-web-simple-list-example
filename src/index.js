@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider, connect} from 'ireactivity';
+import {Provider, connect, update, render} from 'ireactivity';
+import {input, submit} from './forms-dom';
+
 const uid = () => Math.random().toString(35).slice(2, 8).toUpperCase();
 
 const store = {
@@ -8,6 +10,24 @@ const store = {
         {title: 'Todo #1', id: uid()},
         {title: 'Todo #2', id: uid()}
     ]
+};
+
+const TodoForm = ({onSave}) => {
+    const todo = {
+        title: ''
+    };
+
+    const save = () => {
+        onSave(todo);
+        update(todo, () => todo.title = '');
+    };
+
+    return render(todo, () =>
+        <form {...submit(save)}>
+            <div>{todo.title}</div>
+            <input type="text" {...input(todo, 'title')}/>
+        </form>
+    )
 };
 
 const TodoView = ({todo, onRemove}) =>
@@ -31,12 +51,16 @@ const Todos = connect(TodosView, {
     todos: (store) => store.todos
 });
 
-const TodoPlusView = ({onClick}) => <button onClick={onClick}>Add</button>;
+const TodoPlusView = ({onSave}) =>
+    <div>
+        <TodoForm onSave={onSave}/>
+    </div>
 
 const TodoPlus = connect(TodoPlusView, {
-    onClick: (store) => () => {
+    onSave: (store) => (todo) => {
         let id = uid();
-        store.todos = [...store.todos, {title: `Todo #${id}`, id: id}]
+        // store.todos = [...store.todos, {title: `Todo #${id}`, id: id}]
+        store.todos = [...store.todos, {...todo, id}]
     }
 });
 
