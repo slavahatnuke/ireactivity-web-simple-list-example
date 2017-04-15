@@ -1,8 +1,8 @@
-const {update} = require('ireactivity');
+const {up} = require('ireactivity');
 
 const input = (model, path) => {
     return {
-        onChange: (event) => update(model, () => model[path] = event.target.value),
+        onChange: (event) => up(model, () => model[path] = event.target.value),
         value: model[path]
     }
 };
