@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider, connect, update, render} from 'ireactivity';
-import {input, submit} from './forms-dom';
+import {input, submit} from 'ireactivity-form-dom';
 
 const uid = () => Math.random().toString(35).slice(2, 8).toUpperCase();
 
@@ -26,6 +26,7 @@ const TodoForm = ({onSave}) => {
         <form {...submit(save)}>
             <div>{todo.title}</div>
             <input type="text" {...input(todo, 'title')}/>
+            <button>ok</button>
         </form>
     )
 };

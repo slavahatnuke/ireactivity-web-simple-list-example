@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "ireactivity": "0.0.21",
+    "ireactivity-form-dom": "0.0.1",
     "prop-types": "^15.5.1",
     "react": "^15.5.0",
     "react-dom": "^15.5.0"
